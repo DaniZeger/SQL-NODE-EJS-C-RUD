@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update product</title>
+  </head>
+  <body>
+    <% resulte.forEach((item) => { %>
+
+    <h1>Update "<%= item.title %>"</h1>
+    <h3>ID No. <%= item.id %></h3>
+    <form action="/update/<%=item.id%>" method="post">
+      <div>
+        <label for="title"></label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="<%= item.title%>"
+        />
+      </div>
+      <div>
+        <label for="animal"></label>
+        <input
+          type="text"
+          name="animal"
+          id="animal"
+          placeholder="<%= item.animal%>"
+        />
+      </div>
+      <div>
+        <label for="category"></label>
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="<%= item.category%>"
+        />
+      </div>
+      <div>
+        <label for="description"></label>
+        <textarea
+          name="description"
+          id="description"
+          cols="20"
+          rows="5"
+          placeholder="<%= item.description%>"
+        ></textarea>
+      </div>
+      <div>
+        <label for="price"></label>
+        <input
+          type="text"
+          name="price"
+          id="price"
+          placeholder="<%= item.price%>"
+        />
+      </div>
+      <div>
+        <label for="image"></label>
+        <input type="text" name="image" id="image" placeholder="Image" />
+      </div>
+
+      <button>Submit</button>
+    </form>
+    <button style="display: block">
+      <a href="/products">Back to products</a>
+    </button>
+
+    <img src="<%= item.image%>" alt="" style="width: 250px" />
+    <%})%>
+  </body>
+</html>
